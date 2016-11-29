@@ -113,10 +113,10 @@ class EvolutiveKNN:
         k1 = parent1.k
         k2 = parent2.k
         k = self._random_between(k1, k2)
-        colaboration1 = int(np.floor(self._features_size * (k1/float(k1 + k2))))
-        colaboration2 = int(np.ceil(self._features_size * (k2/float(k1 + k2))))
-        weights_p1 = random.sample(parent1.weights, colaboration1)
-        weights_p2 = random.sample(parent2.weights, colaboration2)
+        colaboration1 = int(np.floor(self._features_size/2.0))
+        colaboration2 = int(np.ceil(self._features_size/2.0))
+        weights_p1 = parent1.weights[:colaboration1]
+        weights_p2 = parent2.weights[colaboration2:]
         weights = weights_p1 + weights_p2
         mutate = random.uniform(0, 1)
         if mutate < self.mutation_rate:
