@@ -113,8 +113,8 @@ class EvolutiveKNN:
         k1 = parent1.k
         k2 = parent2.k
         k = self._random_between(k1, k2)
-        colaboration1 = int(np.floor(self._features_size/2.0))
-        colaboration2 = int(np.ceil(self._features_size/2.0))
+        colaboration1 = int(self._features_size/2.0)
+        colaboration2 = int(self._features_size/2.0)
         weights_p1 = parent1.weights[:colaboration1]
         weights_p2 = parent2.weights[colaboration2:]
         weights = weights_p1 + weights_p2
