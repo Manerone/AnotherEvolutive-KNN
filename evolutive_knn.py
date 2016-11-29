@@ -59,11 +59,11 @@ class EvolutiveKNN:
     def _train(self):
         population = self._start_population()
         generations = 0
-        print generations
+        # print generations
         self._calculate_fitness_of_population(population, generations)
         while not self._should_stop(generations):
             generations += 1
-            print generations
+            # print generations
             population = self._create_new_population(population)
             self._calculate_fitness_of_population(population, generations)
 
@@ -185,7 +185,7 @@ class EvolutiveKNN:
 
     def _create_test(self, tr_examples, tr_labels, test_size):
         self.training_examples = []
-        self.training_labels = [] 
+        self.training_labels = []
         self.test_examples = []
         self.test_labels = []
 
